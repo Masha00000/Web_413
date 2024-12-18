@@ -8,3 +8,7 @@ def index(request):
         "data":data,
     }
     return render(request, "list.html", context)
+
+def detail(request, id):
+    article = get_object_or_404(Article, id=id)
+    return render(request, 'article_detail.html', {'article': article})
